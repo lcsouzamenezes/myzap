@@ -16,11 +16,11 @@ if (process.env.HTTPS == 1) { //with ssl
             key: fs.readFileSync(process.env.SSL_KEY_PATH),
             cert: fs.readFileSync(process.env.SSL_CERT_PATH)
         },
-        app).listen(process.env.PORT || 3000);
-    console.log("Https server running on port " + process.env.PORT);
+        app).listen(process.env.HOST_PORT);
+    console.log("Https server running on port " + process.env.HOST_PORT);
 } else { //http
-    app.listen(process.env.PORT, () => {
-        console.log("Http server running on port " + process.env.PORT);
+    app.listen(process.env.HOST_PORT, () => {
+        console.log("Http server running on port " + process.env.HOST_PORT);
     });
 }//http
 
